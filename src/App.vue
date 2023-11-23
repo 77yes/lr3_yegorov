@@ -22,8 +22,4 @@ export default {
 </script>
 
 <style>
-@import '~bootstrap/dist/css/bootstrap.css';
-#app{
-  display: block;
-}
 </style>
