@@ -112,9 +112,7 @@ export default defineComponent({
 
         if (success) {
           this.taskItems = this.taskItems.filter((item) => item.id !== id);
-        } else {
-          // Обробка помилки видалення, якщо потрібно
-        }
+        } 
       }
     },
 
@@ -151,13 +149,8 @@ export default defineComponent({
       const updatedTask = await this.$services.todo.updateStatus(id, 'completed');
       const index = this.taskItems.findIndex((item) => item.id === id);
 
-      if (index !== -1) {
-        //const taskItemsRef = ref(this.taskItems);
-        //taskItemsRef.value[index] = updatedTask;
-        //this.taskItems = taskItemsRef.value;
+      if (index !== -1) {       
         this.taskItems[index] = updatedTask;
-      } else {
-        // Обробка помилки оновлення, якщо потрібно
       }
     },
   }
